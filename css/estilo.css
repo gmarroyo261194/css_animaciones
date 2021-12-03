@@ -1,0 +1,101 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    height: 100vh;
+    background: #f2f2fe;
+  }
+  /*contendor e item de animacion en la cabecera*/
+  .contenedor__animaciones {
+    display: flex;
+    justify-content: space-between;
+  }
+  .itemIzquierda {
+    background: tomato;
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    animation-duration: 4s;
+    animation-name: circuloIzquierda;
+    animation-iteration-count: infinite;
+  }
+  .itemDerecha {
+    background: tomato;
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    animation-duration: 4s;
+    animation-name: circuloDerecha;
+    animation-iteration-count: infinite;
+  }
+  /*contendor con titulo y subtitulo*/
+  .contenedor__texto {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: auto;
+  }
+  .titulo h1 {
+  transition: all 0.2s ease-in-out;
+    }
+  .titulo {
+    font-size: 5rem;
+    margin-bottom: 0.8em;
+  }
+  .titulo:hover {
+    transform: scale(1.5);
+  }
+  .subtitulo {
+    font-size: 2rem;
+    font-weight: 900;
+    z-index: 400;
+  }
+  .fondo__div {
+    display: flex;
+    flex-direction: row;
+    width: 800px;
+  }
+  .fondo__animado {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+    height: 200px;
+    z-index: -1;
+    background-color: rgb(155, 155, 195);
+    animation-duration: 5s;
+    animation-name: animacionSubTitulo;
+    animation-iteration-count: infinite;
+  }
+  
+  /*Key frame de animacio para los 2 circulos en la cabecera*/
+  @keyframes circuloIzquierda {
+    from {
+      clip-path: circle(20% at top left);
+    }
+    to {
+      clip-path: circle(85% at top left);
+    }
+  }
+  @keyframes circuloDerecha {
+    from {
+      clip-path: circle(20% at top right);
+    }
+    to {
+      clip-path: circle(85% at top right);
+    }
+  }
+  
+  /*Key frame de animacio para el subtitulo*/
+  @keyframes animacionSubTitulo {
+    from {
+      clip-path: polygon(0% 0%, 0 0, 0 50%, 0 100%, 0% 100%);
+    }
+    to {
+      clip-path: polygon(0% 0%, 100% 1%, 100% 49%, 100% 100%, 0 100%);
+    }
+  }
+  
